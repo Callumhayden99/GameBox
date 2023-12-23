@@ -1,57 +1,115 @@
-*{
-margin: 0;
-padding: 0;
-height: 100%;
-width: 100%;
+* {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .container {
-    display: grid;
-    grid-template-areas: 
-        "header header"
-        "left-menu main-content"
-        "footer footer";
-    grid-template-rows: 100px 1fr 150px;
-    grid-template-columns: 200px 1fr;
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "left-menu main-content"
+    "footer footer";
+  grid-template-rows: 100px 1fr 1fr;
+  grid-template-columns: 200px 1fr;
 }
 
 header {
-    display: grid;
-    grid-area: header;
-    grid-template-columns: 1fr auto;
-    background-color: rgb(56, 59, 56);
+  display: grid;
+  grid-area: header;
+  grid-template-columns: 1fr auto;
+  background-color: rgb(56, 59, 56);
 }
 
 .h1 {
-    display: grid;
-    font-size: 40px;
-    color: white;
-    align-content: center;
-    margin-left: 50px;
-   
+  display: grid;
+  font-size: 40px;
+  color: white;
+  align-content: center;
+  margin-left: 50px;
 }
 
 nav {
-    display: grid;
-    grid-template-columns: repeat(6, auto);
-    font-size: 20px;
-    column-gap: 20px;
-    grid-column: 2;
-    list-style: none;
-    align-content: center;
-    margin-right: 250px;
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  font-size: 20px;
+  column-gap: 20px;
+  grid-column: 2;
+  list-style: none;
+  align-content: center;
+  margin-right: 250px;
 }
 
-a{
-    color: white;
-    text-decoration: none;
+a {
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
 }
 
 .left-menu {
-    grid-area: left-menu;
+  grid-area: left-menu;
 }
 
 footer {
-    grid-area: footer;
-    background-color: rgb(56, 59, 56);
+  display: grid;
+  grid-area: footer;
+  background-color: rgb(56, 59, 56);
+  color: white;
+  grid-template-areas:
+    "footer-header footer-header footer-header footer-header footer-header"
+    "products services customer about fifth-column";
+  grid-template-rows: 50px 100px; 
+  grid-template-columns: repeat(5, 1fr); 
+  padding: 20px;
+  gap: 20px;
 }
+
+.footer-header {
+  grid-area: footer-header;
+  text-align: center; /* Center the text */
+  font-size: 24px;
+}
+
+.products,
+.services,
+.customer,
+.about,
+.fifth-column {
+  display: grid;
+  grid-auto-rows: 50px; 
+  justify-content: end;
+}
+
+.products {
+  grid-area: products;
+}
+.services {
+  grid-area: services;
+}
+.customer {
+  grid-area: customer;
+}
+.about {
+  grid-area: about;
+}
+.fifth-column {
+  grid-area: fifth-column; /* Placeholder for the fifth column */
+}
+
+/* Style for the lists within these sections */
+.products ul,
+.services ul,
+.customer ul,
+.about ul,
+.fifth-column ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 5px;
+}
+
+
